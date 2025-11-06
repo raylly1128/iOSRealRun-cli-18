@@ -22,7 +22,7 @@
 1. 系统是 `Windows`，`macOS`，`Linux` 均可（Linux 请参考[此 issue](https://github.com/BiancoChiu/iOSRealRun-cli-18/issues/4)）
 2. iPhone 或 iPad 系统版本大于等于 17（17 / 18 / 26 均可运行）
 3. Windows 需要安装 iTunes
-4. 已安装 `Python3` 和 `uv`
+4. 已安装 `Python3` 和 `uv` / `pip3` (选择一种方式即可）
 5. **重要**: 只能有一台 iPhone 或 iPad 连接到电脑，否则会出问题
 
 ### 步骤
@@ -30,17 +30,26 @@
 1. 克隆本项目到本地并进入项目目录
 2. 安装依赖  
     ```shell
+    # uv
     uv sync
+    # pip
+    pip3 install -r requirements.txt
     ```
 3. 修改配置和路线文件 （见 [这里](https://github.com/iOSRealRun/iOSRealRun-cli/blob/main/README.md#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95) 的 4、5、7 步）
 4. 将设备连接到电脑，解锁，如果请求信任的提示框，请点击信任
 5. Windows **以管理员身份** 打开终端（cmd 或 PowerShell），先进入项目目录，然后执行以下命令 
     ```shell
+    # uv
     uv run main.py
+    # pip
+    python main.py
     ```
     macOS / Linux 打开终端，先进入项目目录，然后执行以下命令  
     ```shell
+    # uv
     sudo uv run main.py
+    # pip
+    sudo python main.py
     ```
     > 需要 管理员 / root 权限是因为需要创建 TUN 设备  
 
